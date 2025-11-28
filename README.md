@@ -15,10 +15,19 @@ El script de análisis (`hr_analysis.py`) resuelve las siguientes interrogantes:
 5. **Fuerza Comercial:** Conteo total de empleados en los departamentos de 'Sales' y 'Marketing'.
 6. **El Costo del Adiós:** Estimación del costo financiero total de la rotación de empleados (asumiendo un costo del 20% del salario anual).
 
+## 📊 Visualización de Datos
+
+El proyecto ahora incluye gráficos generados con **Matplotlib** para facilitar la interpretación de los datos:
+
+* **Distribución de Empleados por Departamento:** Gráfico de barras para comparar el tamaño de los equipos.
+* **Distribución de Salarios:** Histograma para analizar los rangos salariales más comunes.
+* **Proporción de Attrition:** Gráfico de pastel para visualizar el porcentaje de rotación de personal.
+
 ## 🛠️ Tecnologías Utilizadas
 
 * **Python 3.x**
 * **Pandas:** Para manipulación, limpieza y análisis de datos.
+* **Matplotlib:** Para la generación de gráficos y visualización de datos.
 
 ## 🚀 Cómo ejecutar este proyecto
 
@@ -33,7 +42,7 @@ El script de análisis (`hr_analysis.py`) resuelve las siguientes interrogantes:
 3. Instalar dependencias:
 
     ```bash
-    pip install pandas
+    pip install pandas matplotlib
     ```
 
 4. Ejecutar el script de análisis:

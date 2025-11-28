@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Carga de Datos
 df = pd.read_csv('data/hr_data.csv')
@@ -46,3 +47,60 @@ leavers = df[df['Attrition'] == 'Yes']
 subtotal = leavers['Salary'].sum()
 total = subtotal * 0.20
 print(f'\nEl costo total de la fuga de cerebros es de: ${total:,.2f}')
+
+# -----------------------------------------------------------------------------------------------------------------
+# GRÁFICOS CON MATPLOTLIB
+# -----------------------------------------------------------------------------------------------------------------
+
+# Gráfico 1: Empleados por departamento
+dept_counts = df['Department'].value_counts()
+
+# Crear la figura 
+plt.figure(figsize = (10, 6))
+
+# Crear gráfico de barras
+# Eje X: Nombres de departamento
+# Eje Y: Cantidad de empleados por departamento
+plt.bar(dept_counts.index, dept_counts.values, color = 'skyblue')
+
+# Etiquetas y Título
+plt.title('Distribución de Empleados por Departamento')
+plt.xlabel('Departamento')
+plt.ylabel('Número de Empleados')
+
+# Mostrar gráfico
+plt.show()
+
+# Gráfico 2: Distribución de salarios
+
+# Crear la figura
+plt.figure(figsize = (10, 6))
+
+# bins = 20 -> Divide los salarios en 20 rangos
+# edgecolor = 'black' -> dibuja un borde negro por barra para distinguir mejor 
+plt.hist(df['Salary'], bins = 20, color = 'lightgreen', edgecolor = 'black')
+
+# Etiquetas y Título
+plt.title('Distribución de Salarios')
+plt.xlabel('Salario')
+plt.ylabel('Frecuencia (Número de Empleados)')
+
+# Mostrar gráfico
+plt.show()
+
+# Gráfico 3: Proporción de Attrition
+attrition_counts = df['Attrition'].value_counts()
+
+# Crear la figura
+plt.figure(figsize = (10, 6))
+
+# autopct = '%1.1f%%' muestra el porcentaje con un decimal
+# startangle = 90 gira el gráfico para que empiecen desde arriba
+plt.pie(attrition_counts.values, labels = attrition_counts.index, autopct = '%1.1f%%',
+        startangle = 90, colors = ['lightgreen', 'salmon'])
+
+# Título
+plt.title('Proporción de Empleados que se van (Attrition)')
+
+# Mostrar gráfico
+plt.show()
