@@ -68,6 +68,9 @@ plt.title('Distribución de Empleados por Departamento')
 plt.xlabel('Departamento')
 plt.ylabel('Número de Empleados')
 
+# Guardar gráfico
+plt.savefig('img/employees_by_dept.png')
+
 # Mostrar gráfico
 plt.show()
 
@@ -85,6 +88,9 @@ plt.title('Distribución de Salarios')
 plt.xlabel('Salario')
 plt.ylabel('Frecuencia (Número de Empleados)')
 
+# Guardar gráfico
+plt.savefig('img/salary_distribution.png')
+
 # Mostrar gráfico
 plt.show()
 
@@ -101,6 +107,9 @@ plt.pie(attrition_counts.values, labels = attrition_counts.index, autopct = '%1.
 
 # Título
 plt.title('Proporción de Empleados que se van (Attrition)')
+
+# Guardar gráfico
+plt.savefig('img/attrition_proportion.png')
 
 # Mostrar gráfico
 plt.show()
